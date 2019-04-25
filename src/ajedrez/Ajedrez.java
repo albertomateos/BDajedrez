@@ -5,6 +5,10 @@
  */
 package ajedrez;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author PC07
@@ -15,7 +19,10 @@ public class Ajedrez {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("AjedrezPU");
+        EntityManager em = emf.createEntityManager();
+        
     }
-    
+    em.getTransaction().begin();
+    em.getTransaction().commit();
 }
